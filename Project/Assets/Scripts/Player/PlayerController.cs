@@ -21,29 +21,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        CheckInput();
+        if(!inAttack)
+            Move();
+        if (Input.GetKeyDown(KeyCode.Space))
+            anim.SetTrigger("Kick"); 
     }
 
-    private void CheckInput()
+    private void Move()
     {
-        Vector3 direction = Vector3.zero;
-        if(Input.touchCount > 0)
-        {
-            Vector3 currentTouchPos = Vector3.zero;
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-            {
-                startTouchPos = Camera.main.ScreenToWorldPoint(touch.position);
-            }
-            else if (startTouchPos != Camera.main.ScreenToWorldPoint(touch.position))
-            {
-                currentTouchPos = Camera.main.ScreenToWorldPoint(touch.position);
-                direction = new Vector3((currentTouchPos - startTouchPos).x, 0, (currentTouchPos - startTouchPos).y);
-                rb.velocity = direction * moveSpeed;
-            }
-            if (touch.phase == TouchPhase.Ended)
-                anim.SetTrigger("Kick");
-        }
+        float velocityX = Input.GetAxis("Vertical");
+        float velocityZ = Input.GetAxis("Horizontal");
+        Vector3 direction = new Vector3(velocityZ, 0, velocityX) * moveSpeed;
+        rb.velocity = direction;
 
         if (direction != Vector3.zero)
             anim.SetBool("IsRunning", true);

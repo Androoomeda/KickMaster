@@ -260,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5595368056598822563, guid: da85bcdc6437e684c865549e0a61823f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.509796
+      value: 26.987
       objectReference: {fileID: 0}
     - target: {fileID: 5595368056598822563, guid: da85bcdc6437e684c865549e0a61823f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18564,7 +18564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesCount: 0
   enemies: {fileID: 1760529800}
-  WinPanel: {fileID: 0}
+  WinPanel: {fileID: 13143711}
 --- !u!1 &1643917259
 GameObject:
   m_ObjectHideFlags: 0
@@ -18922,7 +18922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5572902908778824859, guid: a62d1243a86feab4db4e1b28ea94039e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.987625
+      value: 10.4
       objectReference: {fileID: 0}
     - target: {fileID: 5572902908778824859, guid: a62d1243a86feab4db4e1b28ea94039e, type: 3}
       propertyPath: m_LocalPosition.y
